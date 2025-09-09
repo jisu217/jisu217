@@ -34,3 +34,6 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+![snake animation](https://raw.githubusercontent.com/jisu217/jisu217/output/github-snake.svg)
+- README.md에 추가
