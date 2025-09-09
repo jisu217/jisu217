@@ -1,28 +1,26 @@
-# snake.yml
+# snake.yml 최종 수정본
 
 name: Generate Snake Animation
 
 on:
-  # 6시간마다 자동으로 실행
   schedule:
     - cron: "0 */6 * * *"
-  # Actions 탭에서 수동으로 실행 가능
   workflow_dispatch:
-  # main 브랜치에 push가 발생했을 때 실행
   push:
     branches:
       - main
 
+# 👇👇👇 이 부분이 가장 중요합니다! 파일 쓰기 권한을 명시적으로 부여합니다. 👇👇👇
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. 저장소 코드를 체크아웃 (불러오기)
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. 뱀 애니메이션 생성
       - name: Generate snake animation
         uses: Platane/snk@v3
         id: snake-gif
@@ -32,7 +30,6 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      # 3. 생성된 파일을 output 브랜치에 푸시
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
