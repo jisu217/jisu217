@@ -1,1 +1,1 @@
-![snake animation](https://raw.githubusercontent.com/jisu217/jisu217/output/github-snake.svg)
+- 실행시키려면 ! 맨 앞 줄에 추가 [snake animation](https://raw.githubusercontent.com/jisu217/jisu217/output/github-snake.svg)
